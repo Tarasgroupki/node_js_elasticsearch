@@ -1,0 +1,169 @@
+{
+	"info": {
+		"_postman_id": "6c7e2d39-26b8-4816-bfd4-3e8686a0e728",
+		"name": "Elastic",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4446340"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "get users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:2700/api/users?field=name&search=Ihor",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2700",
+							"path": [
+								"api",
+								"users"
+							],
+							"query": [
+								{
+									"key": "field",
+									"value": "name"
+								},
+								{
+									"key": "search",
+									"value": "Ihor"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Ihor\",\r\n    \"surname\": \"Pavliuk\",\r\n    \"age\": 22,\r\n    \"sex\": \"man\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:2700/api/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2700",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Orders",
+			"item": [
+				{
+					"name": "save orders",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "csv_file_url",
+									"type": "file",
+									"src": "0Axl8akWf/sample.csv"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:2700/api/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2700",
+							"path": [
+								"api",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "orders",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoidXNlciIsInVzZXJMb2dpbiI6IlVzZXIxIiwiaWF0IjoxNjc1OTQ2ODUyLCJleHAiOjE2NzU5ODI4NTJ9.JKQ6hVpW3KseVjJAi4FjkEwVPigAokrjugZ55zCK3bE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:2700/api/orders?field=name&search=Krystal",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2700",
+							"path": [
+								"api",
+								"orders"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "perPage",
+									"value": "10",
+									"disabled": true
+								},
+								{
+									"key": "sortBy",
+									"value": "_id",
+									"disabled": true
+								},
+								{
+									"key": "asc",
+									"value": "-1",
+									"disabled": true
+								},
+								{
+									"key": "field",
+									"value": "name"
+								},
+								{
+									"key": "search",
+									"value": "Krystal"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

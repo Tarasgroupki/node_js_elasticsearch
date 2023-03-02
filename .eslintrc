@@ -1,0 +1,11 @@
+{
+  "extends": ["airbnb/base"],
+  "rules": {
+    "no-plusplus": [2, { allowForLoopAfterthoughts: true }],
+    "no-underscore-dangle": [0, { "allow": [] }],
+    "no-return-await": 0,
+    "max-len": [2, 200],
+    "no-param-reassign": ["error", { "props": false }],
+    "no-restricted-syntax": ["error", "ForInStatement", "LabeledStatement", "WithStatement"]
+  }
+}
